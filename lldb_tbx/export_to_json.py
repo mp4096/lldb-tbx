@@ -31,7 +31,7 @@ class TreeNode(dict):
 
 def get_name_or_address(lldb_obj: lldb.SBValue) -> str:
     return (
-        "<anonymous at {}>".format(lldb_obj.GetAddress())
+        f"<anonymous at {lldb_obj.GetAddress()}>"
         if lldb_obj.GetName() is None
         else lldb_obj.GetName()
     )
@@ -150,7 +150,7 @@ class ExportToJson:
         var_as_dict = {get_name_or_address(lldb_obj): convert_to_dict(lldb_obj)}
 
         output_path = Path(
-            "{}.json".format(args.variable)
+            f"{args.variable}.json"
             if args.output_filename is None
             else args.output_filename
         ).resolve()
