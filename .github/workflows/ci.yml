@@ -1,4 +1,4 @@
-name: ci
+name: Lints and checks
 
 on:
   push:
