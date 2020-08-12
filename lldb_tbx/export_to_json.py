@@ -159,7 +159,7 @@ class ExportToJson:
             json.dump(var_as_dict, f_handle, indent=args.indent)
 
     def get_short_help(self):
-        print(self._parser.description)
+        return self._parser.description
 
     def get_long_help(self):
-        self._parser.print_help()
+        return self._parser.format_help()
